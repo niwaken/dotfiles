@@ -160,3 +160,11 @@
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+;;for go-autocomplete
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
+(eval-after-load "go-mode"
+  '(progn
+     (require 'go-autocomplete)))
