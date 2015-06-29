@@ -30,6 +30,20 @@
 (when (< emacs-major-version 24)
   (defalias 'prog-mode 'fundamental-mode))
 
+;; Command-Path
+(dolist (dir (list
+              "/sbin"
+              "/usr/sbin"
+              "/bin"
+              "/usr/bin"
+              "/usr/local/bin"
+              (expand-file-name "~/bin")
+              ))
+ (when (and (file-exists-p dir) (not (member dir exec-path)))
+   (setenv "PATH" (concat dir ":" (getenv "PATH")))
+   (setq exec-path (append (list dir) exec-path))))
+
+
 ;; Macのみの設定
 (when (eq system-type 'darwin)
   ;; CmdとOptionの入替
@@ -161,10 +175,7 @@
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
-;;for go-autocomplete
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH"))
-(eval-after-load "go-mode"
-  '(progn
-     (require 'go-autocomplete)))
+;; markdown-mode
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
