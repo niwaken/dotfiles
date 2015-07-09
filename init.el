@@ -199,3 +199,11 @@
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; go-lang
+(require 'exec-path-from-shell)
+(let ((envs '("PATH" "GOPATH")))
+  (exec-path-from-shell-copy-envs envs))
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+
