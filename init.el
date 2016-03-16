@@ -43,6 +43,12 @@
    (setenv "PATH" (concat dir ":" (getenv "PATH")))
    (setq exec-path (append (list dir) exec-path))))
 
+;; racer for rust env
+;;(setq racer-rust-src-path "/usr/local/src/rustc-1.1.0/src/")
+;;(setq racer-cmd "/usr/local/racer/target/release/racer")
+;;(add-to-list 'load-path "/usr/local/racer/editors/emacs")
+;;(eval-after-load "rust-mode" '(require 'racer))
+
 
 ;; Macのみの設定
 (when (eq system-type 'darwin)
@@ -172,11 +178,17 @@
 (setq magit-auto-revert-mode nil)
 
 ;; haskell-mode
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
+(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+(add-hook 'haskell-mode-hook 'haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'font-lock-mode)
@@ -184,15 +196,15 @@
 (add-to-list 'interpreter-mode-alist '("runghc" . haskell-mode))
 (add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode))
 
-(setq haskell-program-name "/usr/bin/ghci")
-(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable
-(defadvice inferior-haskell-load-file (after change-focus-after-load)
-  "Change focus to GHCi window after C-c C-l command"
-  (other-window 1))
-(ad-activate 'inferior-haskell-load-file)
-(autoload 'ghc-init "ghc" nil t)
-(autoload 'ghc-debug "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+;;(setq haskell-program-name "/usr/bin/ghci")
+;;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable
+;;(defadvice inferior-haskell-load-file (after change-focus-after-load)
+;;  "Change focus to GHCi window after C-c C-l command"
+;;  (other-window 1))
+;;(ad-activate 'inferior-haskell-load-file)
+;;(autoload 'ghc-init "ghc" nil t)
+;;(autoload 'ghc-debug "ghc" nil t)
+;;(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
 
 ;; markdown-mode
@@ -207,3 +219,36 @@
 (require 'go-autocomplete)
 (require 'auto-complete-config)
 
+
+;; racer fook
+;;(add-hook 'rust-mode-hook 
+;;  '(lambda () 
+;;     (racer-activate)
+;;     (local-set-key (kbd "M-.") #'racer-find-definition)
+;;     (local-set-key (kbd "TAB") #'racer-complete-or-indent)))
+
+;; for ruby
+(autoload 'ruby-mode "enh-ruby-mode"
+  "Mode for editing ruby source files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$latex " . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
+;; ruby-block.el --- highlight matching block
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
+
+;; for python
+(setq py-python-command "python3")
+
+;; smartparens
+(require 'smartparens-config)
+(smartparens-global-mode t)
+
+;; for erlang
+(add-hook 'erlang-mode-hook 'erlang-font-lock-level-4)
