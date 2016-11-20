@@ -1,8 +1,10 @@
+;;; package --- my init.el
+;;; Code:
 (set-language-environment 'Japanese)
 (prefer-coding-system 'utf-8)
 
 
-;; load-path用の関数
+;;; Commentary: load-path用の関数
 (defun add-to-load-path (&rest paths)
   (let (path)
     (dolist (path paths paths)
@@ -30,6 +32,7 @@
 (when (< emacs-major-version 24)
   (defalias 'prog-mode 'fundamental-mode))
 
+
 ;; Command-Path
 (dolist (dir (list
               "/sbin"
@@ -44,17 +47,22 @@
    (setq exec-path (append (list dir) exec-path))))
 
 ;; racer for rust env
-;;(setq racer-rust-src-path "/usr/local/src/rustc-1.1.0/src/")
-;;(setq racer-cmd "/usr/local/racer/target/release/racer")
-;;(add-to-list 'load-path "/usr/local/racer/editors/emacs")
-;;(eval-after-load "rust-mode" '(require 'racer))
+(setq racer-rust-src-path "/usr/local/src/rustc-1.11.0/src/")
+(setq racer-cmd "/usr/local/rust/racer/target/release/racer")
+;;(add-to-list 'load-path "/usr/local/rust/racer/editors/emacs")
+(eval-after-load "rust-mode" '(require 'racer))
 
+;; ido-vertical
+(require 'ido-vertical-mode)
+(ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 ;; Macのみの設定
 (when (eq system-type 'darwin)
   ;; CmdとOptionの入替
-  (setq ns-command-modifier (quote meta))
-  (setq ns-alternate-modifier (quote super))
+;;  (setq ns-command-modifier (quote meta))
+;;  (setq ns-alternate-modifier (quote super))
   (require 'ucs-normalize)
   (set-file-name-coding-system 'utf-8-hfs)
   (setq locale-coding-system 'utf-8-hfs))
@@ -75,8 +83,8 @@
          '(cursor-color     . "gray")
          '(cursor-type      . box)
          '(menu-bar-lines . 1)
-         '(width . 160) ;; ウィンドウ幅
-         '(height . 58) ;; ウィンドウの高さ
+         '(width . 125) ;; ウィンドウ幅
+         '(height . 50) ;; ウィンドウの高さ
          '(top . 0) ;;表示位置
          '(left . 10) ;;表示位置
          )
@@ -126,10 +134,12 @@
 
 
 ;; 対応する括弧を光らせる。
-(show-paren-mode 1) 
+(show-paren-mode 1)
 (setq show-paren-style 'expression)
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "green")
+;; 括弧自動挿入
+(electric-pair-mode 1)
 
 ;; テキスト表示周り設定
 (global-hl-line-mode) ;; 編集行のハイライト
@@ -148,8 +158,8 @@
 (setq auto-save-default nil)
 
 ;; helm-modeの読込と初期からの有効化
-(require 'helm-config)
-(helm-mode 1)
+;;(require 'helm-config)
+;;(helm-mode 1)
 
 
 ;; auto-complete
@@ -196,59 +206,115 @@
 (add-to-list 'interpreter-mode-alist '("runghc" . haskell-mode))
 (add-to-list 'interpreter-mode-alist '("runhaskell" . haskell-mode))
 
-;;(setq haskell-program-name "/usr/bin/ghci")
-;;(add-hook 'haskell-mode-hook 'inf-haskell-mode) ;; enable
-;;(defadvice inferior-haskell-load-file (after change-focus-after-load)
-;;  "Change focus to GHCi window after C-c C-l command"
-;;  (other-window 1))
-;;(ad-activate 'inferior-haskell-load-file)
-;;(autoload 'ghc-init "ghc" nil t)
-;;(autoload 'ghc-debug "ghc" nil t)
-;;(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-
 
 ;; markdown-mode
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-;; go-lang
+;; golang
 (require 'exec-path-from-shell)
 (let ((envs '("PATH" "GOPATH")))
   (exec-path-from-shell-copy-envs envs))
 (require 'go-autocomplete)
 (require 'auto-complete-config)
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 
 ;; racer fook
-;;(add-hook 'rust-mode-hook 
-;;  '(lambda () 
-;;     (racer-activate)
-;;     (local-set-key (kbd "M-.") #'racer-find-definition)
-;;     (local-set-key (kbd "TAB") #'racer-complete-or-indent)))
+(add-hook 'rust-mode-hook
+  '(lambda ()
+     (racer-activate)
+     (local-set-key (kbd "M-.") #'racer-find-definition)
+     (local-set-key (kbd "TAB") #'racer-complete-or-indent)))
 
 ;; for ruby
 (autoload 'ruby-mode "enh-ruby-mode"
   "Mode for editing ruby source files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$latex " . ruby-mode))
-(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rb$latex " . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
+;;(require 'ruby-electric)
+;;(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+;;(setq ruby-electric-expand-delimiters-list nil)
 
 ;; ruby-block.el --- highlight matching block
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
 
+
+;; discover.el set global
+(require 'discover)
+(global-discover-mode 1)
+
+;; projectile-rails
+(require 'projectile)
+(projectile-global-mode)
+(require 'projectile-rails)
+(add-hook 'ruby-mode-hook 'projectile-rails-on)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
+;;(add-to-list 'auto-mode-alist '("\\.erb\\'" . projectile-rails-on))
+
+(require 'flymake-ruby)
+(add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
+
+;;(require 'robe)
+;;(add-hook 'ruby-mode-hook 'robe-mode)
+
+;;(global-company-mode t)
+;;(push 'company-robe company-backends)
+
+;; hydra for rails
+(define-key projectile-rails-mode-map (kbd "s-r") 'hydra-projectile-rails/body)
+
 ;; for python
 (setq py-python-command "python3")
 
 ;; smartparens
-(require 'smartparens-config)
-(smartparens-global-mode t)
+;;(require 'smartparens-config)
+;;(smartparens-global-mode t)
+
 
 ;; for erlang
 (add-hook 'erlang-mode-hook 'erlang-font-lock-level-4)
+
+;; for elixir
+(require 'elixir-mode)
+(require 'alchemist)
+(require 'flycheck-elixir)
+(add-to-list 'elixir-mode-hook 'ac-alchemist-setup)
+
+;; for docfile
+(autoload 'dockerfile-mode "dockerfile-mode" nil t)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+(require 'inline-string-rectangle)
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+
+(require 'mark-more-like-this)
+(global-set-key (kbd "C-<") 'mark-previous-like-this)
+(global-set-key (kbd "C->") 'mark-next-like-this)
+(global-set-key (kbd "C-M-m") 'mark-more-like-this) ; like the other two, but takes an argument (negative is previous)
+(global-set-key (kbd "C-*") 'mark-all-like-this)
+
+(provide 'init)
+;;;
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (mark-multiple ruby-end flymake-ruby ido-vertical-mode nginx-mode hydra discover guide-key projectile-rails dockerfile-mode yaml-mode web-mode rust-mode ruby-block quickrun python-mode markdown-mode magit js2-mode go-eldoc go-autocomplete flycheck-rust flycheck-haskell flycheck-elixir exec-path-from-shell erlang enh-ruby-mode ac-alchemist))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+

@@ -1,0 +1,181 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/niwaken/my_web_apps/depot/" . "app/")
+ ("/Users/niwaken/my_web_apps/depot/test/" . "fixtures/")
+ ("/Users/niwaken/my_web_apps/depot/app/views/" . "products/")
+ ("/Users/niwaken/my_web_apps/depot/app/assets/" . "stylesheets/")
+ ("/Users/niwaken/my_web_apps/depot/app/" . "views/")
+ ("/Users/niwaken/my_web_apps/depot/db/" . "migrate/")
+ ("/Users/niwaken/my_web_apps/modal_test/app/views/" . "products/")
+ ("/Users/niwaken/my_web_apps/modal_test/db/" . "migrate/")
+ ("/Users/niwaken/my_web_apps/modal_test/" . "app/")
+ ("/Users/niwaken/my_web_apps/modal_test/app/assets/" . "javascripts/")
+ ("/Users/niwaken/my_web_apps/modal_test/app/" . "controllers/")
+ ("/Users/niwaken/my_web_apps/shine/config/" . "initializers/")
+ ("/Users/niwaken/my_web_apps/shine/app/views/devise/" . "registrations/")
+ ("/Users/" . "niwaken/")
+ ("/Users/niwaken/my_web_apps/shine/app/views/" . "devise/")
+ ("/Users/niwaken/my_web_apps/shine/app/" . "controllers/")
+ ("/Users/niwaken/my_web_apps/shine/" . "config/")
+ ("/Users/niwaken/my_web_apps/" . "depot/")
+ ("/Users/niwaken/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/niwaken/.emacs.d/"
+ "/Users/niwaken/my_web_apps/depot/app/views/products/"
+ "/Users/niwaken/my_web_apps/depot/app/models/"
+ "/Users/niwaken/my_web_apps/depot/test/fixtures/"
+ "/Users/niwaken/my_web_apps/depot/test/models/"
+ "/Users/niwaken/my_web_apps/depot/test/controllers/"
+ "/Users/niwaken/my_web_apps/depot/app/assets/stylesheets/"
+ "/Users/niwaken/my_web_apps/depot/app/views/layouts/"
+ "/Users/niwaken/my_web_apps/depot/db/migrate/"
+ "/Users/niwaken/my_web_apps/modal_test/app/controllers/"
+ "/Users/niwaken/my_web_apps/modal_test/app/views/products/"
+ "/Users/niwaken/my_web_apps/modal_test/app/models/"
+ "/Users/niwaken/my_web_apps/modal_test/app/views/layouts/"
+ "/Users/niwaken/my_web_apps/modal_test/app/assets/javascripts/"
+ "/Users/niwaken/my_web_apps/modal_test/app/assets/stylesheets/"
+ "/Users/niwaken/my_web_apps/modal_test/"
+ "/Users/niwaken/my_web_apps/shine/app/views/dashboard/"
+ "/Users/niwaken/my_web_apps/modal_test/config/"
+ "/Users/niwaken/my_web_apps/modal_test/db/"
+ "/Users/niwaken/my_web_apps/modal_test/db/migrate/"
+ "/Users/niwaken/my_web_apps/shine/config/initializers/"
+ "/Users/niwaken/my_web_apps/shine/app/models/"
+ "/Users/niwaken/my_web_apps/shine/app/views/devise/registrations/"
+ "/Users/niwaken/my_web_apps/shine/app/views/layouts/"
+ "/Users/niwaken/my_web_apps/shine/app/views/devise/sessions/"
+ "/Users/niwaken/my_web_apps/shine/config/"
+ "/Users/niwaken/my_web_apps/shine/"
+ "/Users/niwaken/my_web_apps/shine/webpack/"
+ "/Users/niwaken/my_web_apps/shine/app/views/"
+ "/Users/niwaken/my_web_apps/shine/app/controllers/"
+ "/Users/niwaken/"
+ "/Users/niwaken/my_web_apps/devise/"
+ "/Users/niwaken/my_web_apps/devise-test/"
+ "/Users/niwaken/my_web_apps/devise-api/"
+ "/Users/niwaken/my_web_apps/devise_rails_admin_app/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "_form.html.erb"
+ "product.rb"
+ "products.yml"
+ "product_test.rb"
+ "products_controller_test.rb"
+ "products.scss"
+ "index.html.erb"
+ "application.html.erb"
+ "20161106125343_create_products.rb"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/niwaken/.emacs.d/" (22567 7932 0 0) "README.md" "README.html" "public_repos/" "projectile-bookmarks.eld" "init.el" "ido.last" "elpa/" "elisp/" "conf/" "auto-save-list/" "ac-comphist.dat" ".git/" "../" "./")
+
+ ("/Users/niwaken/" (22565 55427 0 0) "tmp/" "Public/" "Pictures/" "my_web_apps/" "Music/" "Movies/" "Library/" "go/" "eclipse/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Creative Cloud Files/" "Applications/" ".vscode/" ".viminfo" ".Trash/" ".subversion/" ".ssh/" ".rbenv/" ".python_history" ".pyenv/" ".psql_history" ".p2/" ".oracle_jre_usage/" ".npm/" ".local/" ".lein/" ".kindle/" ".iex.exs" ".hgignore_global" ".gitignore_global" ".gitconfig" ".gem/" ".fsav/" ".emacs.d/" ".eclipse/" ".DS_Store" ".dropbox/" ".config/" ".CFUserTextEncoding" ".cargo/" ".cache/" ".cabal/" ".bundle/" ".bash_sessions/" ".bash_profile" ".bash_history" ".android/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/models/" (22561 53050 0 0) "product.rb" "concerns/" "application_record.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/test/models/" (22561 56891 0 0) "product_test.rb" ".keep" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/test/fixtures/" (22559 10199 0 0) "products.yml" "files/" ".keep" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/test/controllers/" (22561 53050 0 0) "products_controller_test.rb" ".keep" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/test/" (22559 10017 0 0) "test_helper.rb" "models/" "mailers/" "integration/" "helpers/" "fixtures/" "controllers/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/" (22559 13500 0 0) "vendor/" "tmp/" "test/" "README.md" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/assets/stylesheets/" (22559 11614 0 0) "scaffolds.scss" "products.scss" "application.css" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/views/products/" (22559 12259 0 0) "show.json.jbuilder" "show.html.erb" "new.html.erb" "index.json.jbuilder" "index.html.erb" "edit.html.erb" "_product.json.jbuilder" "_form.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/views/layouts/" (22559 11557 0 0) "mailer.text.erb" "mailer.html.erb" "application.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/views/" (22559 10199 0 0) "products/" "layouts/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/assets/" (22559 10017 0 0) "stylesheets/" "javascripts/" "images/" "config/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/app/" (22559 10017 0 0) "views/" "models/" "mailers/" "jobs/" "helpers/" "controllers/" "channels/" "assets/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/db/migrate/" (22559 10199 0 0) "20161106125343_create_products.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/depot/db/" (22559 10199 0 0) "seeds.rb" "migrate/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/" (22559 10017 0 0) "shine/" "modal_test/" "helloworld/" "depot/" "books_app/" "blog_app/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/models/" (22557 61016 0 0) "product.rb" "concerns/" "application_record.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/db/" (22557 59547 0 0) "seeds.rb" "schema.rb" "migrate/" "development.sqlite3" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/views/products/" (22557 59546 0 0) "update.js.erb" "new.js.erb" "index.html.erb" "edit.js.erb" "destroy.js.erb" "delete.js.erb" "create.js.erb" "_save.js.erb" "_new.html.erb" "_index.html.erb" "_form.html.erb" "_edit.html.erb" "_delete.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/config/" (22555 10270 0 0) "spring.rb" "secrets.yml" "routes.rb" "puma.rb" "locales/" "initializers/" "environments/" "environment.rb" "database.yml" "cable.yml" "boot.rb" "application.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/views/layouts/" (22555 10075 0 0) "mailer.text.erb" "mailer.html.erb" "application.html.erb" "_header.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/assets/stylesheets/" (22555 9958 0 0) "products.scss" "bootstrap_config.scss" "application.scss" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/" (22555 9701 0 0) "vendor/" "tmp/" "test/" "README.md" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/assets/config/" (22555 7453 0 0) "manifest.js" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/views/" (22555 7950 0 0) "products/" "layouts/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/controllers/" (22555 8284 0 0) "products_controller.rb" "concerns/" "application_controller.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/db/migrate/" (22555 8044 0 0) "20161103112710_create_products.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/assets/javascripts/" (22555 7950 0 0) "products.coffee" "channels/" "cable.js" "application.js" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/assets/" (22555 7453 0 0) "stylesheets/" "javascripts/" "images/" "config/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/modal_test/app/" (22555 7453 0 0) "views/" "models/" "mailers/" "jobs/" "helpers/" "controllers/" "channels/" "assets/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/config/initializers/" (22540 48306 0 0) "wrap_parameters.rb" "session_store.rb" "new_framework_defaults.rb" "mime_types.rb" "inflections.rb" "filter_parameter_logging.rb" "devise.rb" "cookies_serializer.rb" "backtrace_silencers.rb" "assets.rb" "application_controller_renderer.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/" (22540 45287 0 0) "webpack/" "vendor/" "tmp/" "README.md" "Rakefile" "public/" "Procfile" "package.json" "node_modules/" "log/" "lib/" "Gemfile.lock" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/models/" (22540 45421 0 0) "user.rb" "concerns/" "application_record.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/devise/registrations/" (22540 47934 0 0) "new.html.erb" "edit.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/layouts/" (22540 47670 0 0) "mailer.text.erb" "mailer.html.erb" "application.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/devise/sessions/" (22540 47455 0 0) "new.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/devise/" (22540 46896 0 0) "unlocks/" "shared/" "sessions/" "registrations/" "passwords/" "mailer/" "confirmations/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/dashboard/" (22540 47126 0 0) "index.html.erb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/views/" (22540 46896 0 0) "layouts/" "devise/" "dashboard/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/controllers/" (22540 45594 0 0) "dashboard_controller.rb" "concerns/" "application_controller.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/config/" (22540 44774 0 0) "webpack.config.js" "secrets.yml" "routes.rb" "puma.rb" "locales/" "initializers/" "environments/" "environment.rb" "database.yml" "cable.yml" "boot.rb" "application.rb" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/webpack/" (22540 45131 0 0) "application.js" "application.css" "../" "./")
+
+ ("/Users/" (22531 33605 0 0) "Shared/" "niwaken/" "Guest/" ".localized" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/shine/app/" (22539 24403 0 0) "views/" "models/" "mailers/" "jobs/" "helpers/" "controllers/" "channels/" "assets/" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/devise/" (22536 49494 0 0) "vendor/" "tmp/" "test/" "README.rdoc" "Rakefile" "public/" "log/" "lib/" "Gemfile.lock" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/devise-test/" (22536 48326 0 0) "vendor/" "tmp/" "test/" "README.md" "Rakefile" "public/" "log/" "lib/" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/devise-api/" (22536 48159 0 0) "vendor/" "tmp/" "test/" "README.md" "Rakefile" "public/" "log/" "lib/" "Gemfile" "db/" "config.ru" "config/" "bin/" "app/" ".gitignore" "../" "./")
+
+ ("/Users/niwaken/my_web_apps/devise_rails_admin_app/" (22536 46850 0 0) "Gemfile" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

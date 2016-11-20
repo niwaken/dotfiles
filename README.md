@@ -1,5 +1,5 @@
-# niwaken's dotfiles
+niwaken's dotfiles
 --
 ## .emacs.d/
-My emacs initfiles and use elisps.
+My Emacs initfiles and use elisps.
 
